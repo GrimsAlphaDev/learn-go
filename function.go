@@ -10,7 +10,12 @@ func main() {
 	sayHi()
 	sayHello("Rizky", "Fauzan")
 	var result string = getHello("Puerto Rico")
+	var firstName, lastName string = getFullName()
 	fmt.Println(result)
+	fmt.Println(firstName, lastName)
+	// ignore second return value
+	var firstName2, _ = getFullName()
+	fmt.Println(firstName2)
 }
 
 func sayHi() {
@@ -20,4 +25,9 @@ func sayHi() {
 // function return value
 func getHello(name string) string {
 	return "Hello " + name
+}
+
+// function with multiple return value
+func getFullName() (string, string) {
+	return "Rizky", "Fauzan"
 }
